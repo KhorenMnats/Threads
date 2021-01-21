@@ -12,7 +12,7 @@ namespace Thread_Abort
 
             while (true)
             {
-                //Thread.Sleep(3000); // Ловушка для исключения ThreadAbortException.
+                // Thread.Sleep(3000); // Ловушка для исключения ThreadAbortException.
                 try
                 {
                     while (true) // Снять комментарий
@@ -34,15 +34,15 @@ namespace Thread_Abort
                         Console.Write(".");
                     }
 
-                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Blue;
 
                     // Если не вызывать Thread.ResetAbort() - исключение повторно сгенерируется после выхода из catch{}
                     // Предотвращение повторной генерации ThreadAbortException!
-                    //Thread.ResetAbort();                    
+                    // Thread.ResetAbort();                    
                 }
                 //Thread.Sleep(3000); // Ловушка для исключения ThreadAbortException.
             }
-            Console.WriteLine("++++++++++++++++ НЕ ВЫПОЛНИТСЯ ++++++++++++++++");
+            Console.WriteLine("++++++++++++++++ Will No Be Executed ++++++++++++++++");
         }
 
         static void Main()

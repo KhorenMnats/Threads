@@ -20,15 +20,15 @@ namespace ThreadSampleJoin
         // Метод выполняющийся в третичном потоке (Запуск из вторичного потока).
         public static void Method3()
         {
-            Console.WriteLine("Третичный поток # {0}", Thread.CurrentThread.GetHashCode());
+            Console.WriteLine("Tertiary Thread # {0}", Thread.CurrentThread.GetHashCode());
             WriteChar('3', 80, ConsoleColor.Yellow);
-            Console.WriteLine("Третичный поток завершился.");
+            Console.WriteLine("Tertiary Thread ended.");
         }
 
         // Метод выполняющийся во вторичном потоке (Запуск из первичного потока).
         public static void Method2()
         {
-            Console.WriteLine("Вторичный поток # {0}", Thread.CurrentThread.GetHashCode());
+            Console.WriteLine("Secondary Thread # {0}", Thread.CurrentThread.GetHashCode());
             WriteChar('2', 80, ConsoleColor.Blue);
 
             // Создание третичного потока
@@ -37,12 +37,12 @@ namespace ThreadSampleJoin
             thread.Join();
 
             WriteChar('2', 80, ConsoleColor.Blue);
-            Console.WriteLine("Вторичный поток завершился.");
+            Console.WriteLine("Secondary Thread ended.");
         }
 
         static void Main()
         {
-            Console.WriteLine("Первичный поток # {0}", Thread.CurrentThread.GetHashCode());
+            Console.WriteLine("Primary Thread # {0}", Thread.CurrentThread.GetHashCode());
             WriteChar('1', 80, ConsoleColor.Green);
 
             // Создание вторичного потока
@@ -52,7 +52,7 @@ namespace ThreadSampleJoin
 
             WriteChar('1', 80, ConsoleColor.Green);
 
-            Console.WriteLine("Первичный поток завершился.");
+            Console.WriteLine("Primary Thread ended.");
 
             // Delay
             Console.ReadKey();

@@ -1,0 +1,24 @@
+What is a Thread 
+A thread is an independent execution path, able to run simultaneously with other threads.
+An execution path is a possible flow of control of a program.
+
+What is a Critical Secton
+A Critical Secton is a block of code that accesses a shared resource and
+can't be executed by more than one thread at the same time. ...
+When a thread wants access to a critical section,
+it uses one of these synchronization mechanisms to find out whether
+there is any other thread executing the critical section
+
+What is a Synchronization mechanisms (lock, monitor)
+Synchronization is a technique that allows only one thread to access the resource for the particular time.
+No other thread can interrupt until the assigned thread finishes its task.
+
+What is a Deadlock
+A Deadlock is a situation where two or more threads are frozen in their execution
+because they are waiting for each other to finish.
+
+What is a Race Condition 
+A Race Condition occurs when two or more threads are able to access shared data and they try to change it at the same time.
+
+Interlocked
+Provides atomic operations for variables that are shared by multiple threads.

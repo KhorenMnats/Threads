@@ -8,7 +8,7 @@ namespace ThreadSample
         // Метод выполяняющийся во Вторичном потоке.
         static void Function()
         {
-            Console.WriteLine("ID Вторичного потока: {0}", Thread.CurrentThread.ManagedThreadId);
+            Console.WriteLine("Secondary Thread ID: {0}", Thread.CurrentThread.ManagedThreadId);
             Console.ForegroundColor = ConsoleColor.Yellow;
 
             for (int i = 0; i < 160; i++ )
@@ -18,12 +18,12 @@ namespace ThreadSample
             }
 
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine("Вторичный поток завершился.");
+            Console.WriteLine("Secondary Thread ended.");
         }
 
         static void Main() // Метод Main - выполняется в первичном потоке.
         {
-            Console.WriteLine("ID Первичного потока: {0}", Thread.CurrentThread.GetHashCode());
+            Console.WriteLine("Primary Thread ID : {0}", Thread.CurrentThread.GetHashCode());
 
             // Создание нового потока
             Thread thread = new Thread(new ThreadStart(Function));
@@ -42,7 +42,7 @@ namespace ThreadSample
 
             Console.ForegroundColor = ConsoleColor.Gray;
 
-            Console.WriteLine("\nПервичный поток завершился.");
+            Console.WriteLine("\nPrimary Thread ended.");
 
             // Delay
             Console.ReadKey();
