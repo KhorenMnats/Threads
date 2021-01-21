@@ -7,7 +7,7 @@ using System.Threading;
 namespace AsynchronousProgramming
 {
     class Program
-    {
+    { 
         static void Main()
         {
             Console.WriteLine("Первичный поток начал работу.");
