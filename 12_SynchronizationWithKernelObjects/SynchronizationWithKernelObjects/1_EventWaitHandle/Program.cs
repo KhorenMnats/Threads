@@ -13,6 +13,7 @@ namespace EventWaitHandleNs
 
         static void Main()
         {
+            // Set method sent the signal to the waiting thread to proceed its work.
             Thread thread = new Thread(Function);
             thread.Start();
             Thread.Sleep(500); // Дадим время запуститься вторичному потоку.
@@ -31,6 +32,10 @@ namespace EventWaitHandleNs
 
         static void Function()
         {
+            // WaitOne method blocks the current thread and wait for the signal by other thread.
+            // WaitOne method puts the current thread into a Sleep thread state.
+            // WaitOne method returns true if it receives the signal else returns false.
+
             Console.WriteLine("Красный свет");
             auto.WaitOne(); // Остановка выполнения вторичного потока.
 
