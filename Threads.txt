@@ -52,5 +52,15 @@ WahitHandle is encapsulates operating system-specific objects that wait for excl
 
 
 
+BeginInvoke() to invoke the method asynchronously.
+BeginInvoke() will return an object implementing the IAsyncResult interface.
 
+Spawn a new thread to perform the call to method.
+This thread will take up system resources until the thread is destroyed or .NET garbage collects it.
+EndInvoke destroys the thread, or at least marks it as complete to help in garbage collection.
+
+The returned IAsyncResult is how we interact with the asynchronous method call.
+Using the returned IAsyncResult, we can access many properties associated with 
+the asynchronous call including whether or not the asynchronous operation is completed.
+EndInvoke() will block until the asyn operation is completed.
 
