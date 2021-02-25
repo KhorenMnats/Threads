@@ -64,3 +64,7 @@ Using the returned IAsyncResult, we can access many properties associated with
 the asynchronous call including whether or not the asynchronous operation is completed.
 EndInvoke() will block until the asyn operation is completed.
 
+
+.NET framework provides Threading.Tasks class to let you create tasks and run them asynchronously. 
+A task is an object that represents some work that should be done (like promise).
+The task can tell you if the work is completed and if the operation returns a result, the task gives you the result.
